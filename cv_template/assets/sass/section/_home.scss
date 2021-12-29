@@ -1,0 +1,56 @@
+/*========== HOME ==========*/
+.home{
+    position: relative;
+
+    &__container{
+        gap: 3rem;
+    }
+    &__data{
+        gap: .5rem;
+        text-align: center;
+    }
+    &__img{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        justify-self: center;
+        margin-bottom: $mb-1;
+        margin-top: $mb-3;
+    }
+    &__title{
+        font-size: var(--h1-font-size);
+    }
+    &__profession{
+        font-size: var(--normal-font-size);
+        margin-bottom: $mb-1;
+    }
+
+    &__button-movil{
+        display: inline-block;
+        border:  2px solid var(--text-color);
+        color: var(--title-color);
+        padding: 1rem 2rem;
+        border-radius: .25rem;
+        transition: .3s;
+        font-weight: $font-medium;
+        margin-top: $mb-3;
+
+        &:hover{
+            background-color: var(--text-color);
+            color: var(--container-color);
+        }
+    }
+        
+    &__address{
+            gap: 1rem;
+    }
+    &__information{
+        display: flex;
+        align-items: center;
+        font-size: var(--small-font-size);
+    }
+    &__icon{
+        font-size: 1.2rem;
+        margin-right: .25rem;
+        }
+}
