@@ -1,0 +1,145 @@
+/*========== BASE ==========*/ 
+*,::before,::after{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*========== Classes modified to reduce size and print on A4 sheet ==========*/
+.scale-cv .change-theme,
+.scale-cv .generate-pdf{
+    display: none!important;
+}
+.scale-cv .bd-container{
+    max-width: 695px;
+    margin: 0 auto;
+}
+.scale-cv .section{
+    padding: 1.5rem 0 .80rem;
+}
+.scale-cv .section-title{
+    margin-bottom: .75rem;
+}
+.scale-cv .resume__left,
+.scale-cv .resume__right{
+    padding: 0 1rem;
+}
+.scale-cv .home__img{
+    width: 90px!important;
+    height: 90px!important;
+    margin: 0!important;
+}
+.scale-cv .home__container{
+    gap: 1.5rem;
+}
+.scale-cv .home__data{
+    gap: .25rem;
+}
+.scale-cv .home__address,
+.scale-cv .social__container{
+    gap: .75rem!important;
+    
+}
+.scale-cv .social__container{
+    padding: .35rem 0!important;
+}
+.scale-cv .home__icon,
+.scale-cv .social__icon,
+.scale-cv .interests__icon{
+    font-size: 1rem!important;
+}
+.scale-cv .education__container,
+.scale-cv .experiance__container,
+.scale-cv .certificate__container{
+    gap: .50rem!important;
+    padding: .25rem 1rem!important;
+}
+
+.scale-cv .interests{
+    gap: .5rem!important;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+.scale-cv .references__content{
+    padding: 0!important;
+    
+}
+.scale-cv .education__time,
+.scale-cv .experiance__time{
+    padding-right: .5rem!important;
+    
+}
+.scale-cv .education__rounder,
+.scale-cv .experiance__rounder{
+    width: 13px!important;
+    height: 13px!important;
+    margin-top: .22rem!important;
+}
+.scale-cv .education__line,
+.scale-cv .experiance__line{
+    width: 1px!important;
+    height: 100%!important;
+}
+.scale-cv .education__data,
+.scale-cv .experiance__date{
+    gap: .25rem!important;
+}
+.scale-cv .skills__name{
+    margin-bottom: var(--mb-1)!important;
+}
+.scale-cv .interests__container{
+    column-gap: 2.5rem;
+}
+.scale-cv .skills__content{
+    margin-top: 0px;
+}
+.scale-cv .social__container{
+    margin: 0;
+}
+// =================================================================================
+
+body{
+    margin: 0 0 $header-height 0;
+    padding: 0;
+    font-family: $body-font;
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+h1,h2,h3,ul,p{
+    margin: 0;
+}
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: $font-medium;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*========== CLASS CSS ==========*/
+.section{
+    padding: 1.5rem 0;
+}
+.section-title{
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    font-weight: $font-semi-bold;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    text-align: center;
+    margin-bottom: $mb-3;
+}
+

@@ -1,0 +1,14 @@
+/*========== Generate PDF button ==========*/
+.generate-pdf{
+    display: none!important;
+    position: absolute;
+    top: 2.2rem;
+    left: 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    cursor: pointer;
+
+    &:hover{
+        color: var(--title-color);
+    }
+}
