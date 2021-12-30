@@ -14,27 +14,47 @@
   <div class="d-flex flex-row align-items-center"></div>
     <div class="heading mt-2 text-light"> <span>Creat Your CV <br>Online</span> </div> 
     <div class="row mt-1 g-4">  
-      <?php 
+<!-- Modal -->
+<?php 
+ require_once 'includ/dbc.php';
+ $result = $dbh->prepare("SELECT * FROM `form`");
+ $result->execute();
+ $row = $result->fetchall();
+ 
+    ?>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <form method="POST">
+  <div class="mb-3">
+    <?php  foreach ($row as $val) {?>
+    <input type="text" class="form-control mt-2" placeholder='<?php echo $val["personal"] ?>' name="<?php echo $val["personal"] ?>">
+    <?php }?>
+  </div>
+  </form>
+  <button type="submit" class="btn btn-primary m-auto">send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php 
  require_once 'includ/dbc.php';
  $result = $dbh->prepare("SELECT img,title FROM cards");
  $result->execute();
  $row = $result->fetchall();
   foreach ($row as $val) {
     ?>
+  
       <div class="col-md-4">
-        <div class="dropdown">
-        <div class="card p-2 text-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style='background:#F6F6F6;'>
+        <div class="card p-2" style='background:#F6F6F6;' data-bs-toggle="modal" data-bs-target="#exampleModal">
           <div class="p-4 px-4 m-auto"><img src="img/<?php echo $val['img']; ?>.png" height="95" width="90"/></div>
           <div class="email mt-1 m-auto"> <span><?php echo $val['title']; ?></span></div>
       </div> 
-      <ul class="dropdown-menu m-auto ms-3 w-100 rounded-3 bg-white" aria-labelledby="dropdownMenuButton1">
-                <form action="#" method="post">
-                <li class="dropdown-item"><div class="mb-3"><input type="text" class="form-control" placeholder="Name"></div></li>
-                <li class="dropdown-item"><div class="mb-3"><input type="text" class="form-control" placeholder="location"></div></li>
-      
-              </form>
-              </ul>
-              </div>
+    
 
     </div>
       <?php
