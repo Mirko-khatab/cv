@@ -1,3 +1,4 @@
+<?php include "includ/dbc.php"?>
 <nav class="navbar navbar-light" style="background:#706DFA;">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="#">
@@ -6,3 +7,4 @@
     </a>
   </div>
 </nav>
+

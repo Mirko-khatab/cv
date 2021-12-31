@@ -1,11 +1,13 @@
-<?php 
-define('host','localhost');
-define('user','root');
-define('pass','');
-define('dbname','cv');
- try {
-     $dbh=new PDO('mysql:host='.host.';dbname='.dbname,user,pass);
- } catch (PDOExsepstion $e) {
-    exit('Error:'.$e->getMessage());
- }
+<?php
+$db = mysqli_connect('localhost' , 'root' , '' , 'cvo');
+function x($data){
+    global $db;
+    $data = mysqli_real_escape_string($db , htmlspecialchars($data));
+    return $data;
+}
+if(isset($_GET['d'])){
+    $id = x($_GET['d']);
+    mysqli_query($db , "DELETE FROM `person` WHERE `id` = '$id'");
+    header("Location:index.php");
+  }
 ?>
