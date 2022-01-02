@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cv_maker</title>
 </head>
-<body style="background:#C2C0E5;">
+<body>
 <?php
 include'includ/nav.php';
 ?>
@@ -21,7 +21,7 @@ include'includ/nav.php';
     <p class='text-white'>
     With “CV_ONLINE“ you can create an outstanding and professional resume in minutes.
 Create an eye-catching cover letter to send with your resume.
-Transform your resume into a mobile friendly website that you can share with recruiters!
+Transform your resume into a pdf file and you can also change the color that you can share with recruiters!
     </p>
     <a class="btn w-50 text-white g" href="#!">Get started</a>
 </div>
