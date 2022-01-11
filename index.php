@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cv_maker</title>
-</head>
-<body>
 <?php
 include'includ/nav.php';
 ?>
@@ -23,7 +12,7 @@ include'includ/nav.php';
 Create an eye-catching cover letter to send with your resume.
 Transform your resume into a pdf file and you can also change the color that you can share with recruiters!
     </p>
-    <a class="btn w-50 text-white g" href="#!">Get started</a>
+    <a class="btn w-50 text-white g" href="form.php">Get started</a>
 </div>
 <div class="col-sm-6 d-flex justify-content-end mt-5">
 <img src="img/2.svg" alt="second" width="80%">
@@ -35,4 +24,3 @@ Transform your resume into a pdf file and you can also change the color that you
 <?php
 include'includ/footer.html';
 ?>
-</body>
