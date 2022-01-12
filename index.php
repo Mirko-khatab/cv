@@ -1,7 +1,7 @@
 <?php
 include'includ/nav.php';
 ?>
-<div class="container">
+<div class="container mt-3 mb-3">
 <div class="row d-flex justify-content-center mt-5">
 <div class="col-sm-6">
     <h1 class='text-white text-center mt-5'> Build your cv online in</h1>
@@ -19,8 +19,6 @@ Transform your resume into a pdf file and you can also change the color that you
 </div>
 </div>
 </div>
-
-
 <?php
 include'includ/footer.html';
 ?>

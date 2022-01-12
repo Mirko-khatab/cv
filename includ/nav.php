@@ -9,7 +9,7 @@
   <title>cvmaker</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-<?php include "includ/dbc.php"?>
+<?php include "includ/config.php"?>
 <nav class="navbar g">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="#">

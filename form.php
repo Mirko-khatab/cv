@@ -1,17 +1,38 @@
 <?php
 include'includ/nav.php';
 ?>
-<div class="container">
-<div class="row m-3 justify-content-center">
+<div class="container mt-3 mb-3">
+    <div class="d-flex flex-row align-items-center"></div>
+    <div class="heading mt-2"> <span>High-impact Marketing <br>Services</span> </div>
+    <div class="row mt-1 g-4">
 <?php
 $query = mysqli_query($db, "SELECT * FROM `card`");
 while($row = mysqli_fetch_assoc($query)){?>
-<div class="card m-2 border-0 p-3 rounded-3 shadow-sm" style="width: 18rem;">
-  <img src="img/<?php echo x($row['img']);?>.png" class="w-50 m-auto">
-  <div class="card-body text-center">
-    <h5 class="card-title"><?php echo x($row['title']);?></h5>
+ <div class="col-md-4">
+            <div class="card p-3 text-center rounded-5">
+                <img src="img/<?php echo x($row['img']);?>.png" alt="svg" class="w-50 m-auto">
+                <h5 class="card-title mt-3"><?php echo x($row['title']);?></h5>
+               <span data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="img/edit.svg" alt="edit" width="40"></span>
+            </div>
+        </div>
+     
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#!">
+        <div class="mb-3">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  <a href="?d=<?php echo x($row['id']);?>"><img src="assets/img/remove.svg" width="40" style="position:absolute;top:0;right:0;margin:10px" alt=""></a>
+        </form>
+        
+      </div>
+    </div>
+  </div>
 </div>
 <?php } ?>
 </div>

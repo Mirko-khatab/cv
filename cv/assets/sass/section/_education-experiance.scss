@@ -1,0 +1,50 @@
+/*========== EDUCATION ==========*/
+
+/*========== EXPERIENCE ==========*/
+.education__content,
+.experiance__content{
+    display: flex;
+
+    .education__time,
+    .experiance__time{
+        padding-left: 1rem;
+
+        .education__rounder,
+        .experiance__rounder{
+            position: relative;
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: var(--text-color-light);
+            border-radius: 50%;
+            margin-top: .55rem;
+        }
+        .education__line,
+        .experiance__line{
+            display: block;
+            width: 2px;
+            height: 110%;
+            background-color: var(--text-color-light);
+            transform: translate(7px, 0);
+        }
+    }
+    .education__data,
+    .experiance__date{
+        gap: .5rem;
+        color: var(--title-color);
+
+        .education__title,
+        .experiance__titile{
+            font-size: var(--h3-font-size);
+        }
+        .education__studies,
+        .experiance__company{
+            font-size: var(--small-font-size);
+            color: var(--title-color);
+        }
+        .education__year,
+        .experiance__descrription{
+            font-size: var(--smaller-font-size);
+        }
+    }
+}
