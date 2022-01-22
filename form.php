@@ -1,17 +1,16 @@
 <?php
 include'includ/nav.php';
 ?>
-<div class="container mt-3 mb-3">
-    <div class="d-flex flex-row align-items-center"></div>
-    <div class="heading mt-2"> <span class="text-white">CV_ONLINE<br>Services</span> </div>
+<div class="container-sm mt-3 mb-3">
+   
     <div class="row mt-1 g-4">
 <?php
 $query = mysqli_query($db, "SELECT * FROM `test`");
 while($row = mysqli_fetch_assoc($query)){?>
- <div class="col-md-4">
-            <div class="card p-3 rounded-5 g">
-                <img src="img/us.png" alt="svg" class="w-50 m-auto">
-               <div class="mb-2"><h5 class="card-title text-center mt-2"><?php echo x($row['title']);?></h5></div>
+ <div class="col-sm-4">
+            <div class="card p-3 rounded-5" style="background:#C2C0E5 !important;">
+                <img src="img/<?php echo $row['img']; ?>" alt="svg" class="w-50 m-auto">
+              <div class="mb-2"><h3 class="card-title text-center mt-3 text-white"><?php echo x($row['title']);?></h3></div>
                <span data-bs-toggle="modal" data-bs-target="#s<?php echo x($row['id']); ?>"><img src="img/edit.svg" alt="edit" width="40"></span>
             </div>
         </div>
@@ -22,14 +21,19 @@ while($row = mysqli_fetch_assoc($query)){?>
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body">
-        <form action="#">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Name'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Addrase'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Email'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Phone'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder="Date_of_Birthday ('optional')"></div>  
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div> 
+        <form action="includ/insert.php" method="POST" enctype="multipart/form-data">
+        <div class='mb-3'> <input name="Name"  type='text' class='form-control' placeholder='Name'></div>   
+        <div class='mb-3'> <input name="Addrase" type='text' class='form-control' placeholder='Addrase'></div>   
+        <div class='mb-3'> <input name="Email" type='text' class='form-control' placeholder='Email'></div>   
+        <div class='mb-3'> <input name="Phone" type='text' class='form-control' placeholder='Phone'></div>   
+        <div class='mb-3'> <input name="facebook" type='text' class='form-control' placeholder='facebook'></div>   
+        <div class='mb-3'> <input name="insta" type='text' class='form-control' placeholder='Instagram'></div>   
+        <div class='mb-3'> <input name="Date_of_Birthday" type='text' class='form-control' placeholder="Date_of_Birthday"></div>  
+        <div class='mb-3'> <input name="file" type='file' class='form-control btn w-100 g'></div>  
+        <div class='mb-3'> <textarea name="profile" type='' class='form-control' placeholder="PROFILE"></textarea></div>  
+        <div class="mb-3"> <input name="add_1"  type="submit" class="btn w-100 g text-white" value="add"></div> 
       </form>
       </div>
     </div>
@@ -42,12 +46,12 @@ while($row = mysqli_fetch_assoc($query)){?>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#!">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Degree'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Instate'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Grad'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Year'></div>  
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div>  
+        <form action="includ/insert.php" method="POST">
+        <div class='mb-3'> <input name="edu_title" type='text' class='form-control' placeholder='Education Title'></div>   
+        <div class='mb-3'> <input name="institu" type='text' class='form-control' placeholder='institute or university '></div>   
+        <div class='mb-3'> <input name="st" type='text' class='form-control' placeholder='START-Year'></div>   
+        <div class='mb-3'> <input name="end_year" type='text' class='form-control' placeholder='END-Year'></div>   
+        <div class="mb-3"><input name="add_2" type="submit" class="btn w-100 g text-white" value="add"></div>  
       </form>
       </div>
     </div>
@@ -60,13 +64,12 @@ while($row = mysqli_fetch_assoc($query)){?>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#!">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='CompanyName'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='job title'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Start day'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='End day'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Details'></div> 
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div>  
+       <form action="includ/insert.php" method="POST">
+        <div class='mb-3'> <input name="CompanyName" type='text' class='form-control' placeholder='EXPERIANCE TITILE'></div>      
+        <div class='mb-3'> <input name="Start_day" type='text' class='form-control' placeholder='Start day'></div>   
+        <div class='mb-3'> <input name="End_day" type='text' class='form-control' placeholder='End day'></div>   
+        <div class='mb-3'> <textarea name="Details" type='text' class='form-control' placeholder='Details'></textarea></div> 
+        <div class="mb-3"><input name="add_3" type="submit" class="btn w-100 g text-white" value="add"></div>  
       </form>
       </div>
     </div>
@@ -79,13 +82,10 @@ while($row = mysqli_fetch_assoc($query)){?>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#!">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Name'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Job title'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='CompanyName'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Email'></div>   
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Phone'></div>
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div>     
+      <form action="includ/insert.php" method="POST">
+        <div class='mb-3'> <input name="Skill" type='text' class='form-control' placeholder='Skill'></div>    
+        <div class='mb-3'> <input name="lang" type='text' class='form-control' placeholder='Language'></div>    
+        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add_4' value="add"></div>  
       </form>
       </div>
     </div>
@@ -98,9 +98,11 @@ while($row = mysqli_fetch_assoc($query)){?>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#!">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Skill'></div>    
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div>  
+      <form action="includ/insert.php" method="POST">
+        <div class='mb-3'> <input name="title" type='text' class='form-control' placeholder='Certification Title'></div>  
+        <div class='mb-3'> <input name="Year" type='text' class='form-control' placeholder='Year'></div>  
+        <div class='mb-3'> <input name="Details" type='text' class='form-control' placeholder='Certification Details'></div>  
+        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add_5' value="add"></div>   
       </form>
       </div>
     </div>
@@ -113,10 +115,14 @@ while($row = mysqli_fetch_assoc($query)){?>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#!">
-        <div class='mb-3'> <input type='text' class='form-control' placeholder='Object'></div>  
-        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add' value="add"></div>   
+      <form action="includ/insert.php" method="POST">
+        <div class='mb-3'> <input name="Name" type='text' class='form-control' placeholder='Name'></div>   
+        <div class='mb-3'> <input name="Job_title" type='text' class='form-control' placeholder='Job title'></div>   
+        <div class='mb-3'> <input name="Email" type='text' class='form-control' placeholder='Email'></div>   
+        <div class='mb-3'> <input name="Phone" type='text' class='form-control' placeholder='Phone'></div>
+        <div class="mb-3"><input name="add_6" type="submit" class="btn w-100 g text-white" value="add"></div>     
       </form>
+    
       </div>
     </div>
   </div>
@@ -125,6 +131,8 @@ while($row = mysqli_fetch_assoc($query)){?>
 
 <?php } ?>
 </div>
+<div class="d-flex flex-row align-items-center"></div>
+    <div class="heading mt-2"> <a href="cvs/resum.php" class="text-white btn btn-danger">Your_CV</a></div>
 </div>
 <?php
 include'includ/footer.html';

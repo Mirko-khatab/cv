@@ -9,13 +9,15 @@
   <title>cvmaker</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-<?php include "includ/config.php"?>
+<?php include "config.php";
+?>
 <nav class="navbar g">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="#">
       <img src="img/cvs.png" alt="cv" width="35" height="30" class="d-inline-block align-text-top">
       CV_ONLINE
     </a>
+    
   </div>
 </nav>
 </body>
