@@ -1,4 +1,5 @@
-<?php include"../includ/nav.php"; ?>
+<?php include"../includ/nav.php";?>
+<?php echo x($_GET['id']); ?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -6,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--========== BOX ICONS ==========-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="css/styles.css">
 
         <title>Responsive resume cv</title>
@@ -75,10 +76,10 @@
                     <section class="home" id="home">
                         <div class="home__container section bg-grid">
                             <div class="home__data bg-grid">
-                            <?php
-                                $query=mysqli_query($db,"SELECT * FROM `perso`");
+                                 <?php
+                                $query=mysqli_query($db,"SELECT * FROM `person` where `person_id`='42'");
                                 while($row=mysqli_fetch_assoc($query)){
-                                ?>
+                                  ?>
                                 <img src="../includ/uplod/<?php echo $row['img'] ; ?>" alt="profile img" class="home__img">
                                
                                 <h1 class="home__title"><?php echo $row['Name'] ?></h1>
@@ -157,8 +158,8 @@
                                 <div class="education__data bg-grid">
                                     <h3 class="education__title"><?php echo $row['edu_title']; ?></h3>
                                     
-                                    <span class="education__studies"><?php echo $row['institu']; ?></span>
-                                    <span class="education__year"><?php echo $row['st']." - ". $row['end_year'];; ?></span>
+                                    <span class="education__studies"><?php echo $row['edu_place']; ?></span>
+                                    <span class="education__year"><?php echo $row['edu_start_year']." - ". $row['edu_end_year']; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -206,10 +207,10 @@
                                     <span class="experiance__line"></span>
                                 </div>
                                 <div class="experiance__date bg-grid">
-                                    <h3 class="experiance__titile"><?php echo $row['company_name']; ?></h3>
-                                    <span class="experiance__company">From <?php echo $row['start_day']." to ".$row['end_day'];?></span>
+                                    <h3 class="experiance__titile"><?php echo $row['exp_title']; ?></h3>
+                                    <span class="experiance__company">From <?php echo $row['exp_start_day']." to ".$row['exp_end_day'];?></span>
                                     <p class="experiance__descrription">
-                                       <?php echo $row['details']; ?></p>
+                                       <?php echo $row['exp_details']; ?></p>
                                 </div>
                             </div>
                             <?php } ?>
@@ -224,11 +225,11 @@
                         <div class="certificate__container bg-grid">
 
                         <?php
-                         $query=mysqli_query($db,"SELECT * FROM `object`");
+                         $query=mysqli_query($db,"SELECT * FROM `certification`");
                         while($row=mysqli_fetch_assoc($query)){
                                 ?>
                             <div class="certificate__content">
-                                <h3 class="certificate__title"><?php echo $row['certification_title']."(".$row['year'].")"?></h3>
+                                <h3 class="certificate__title"><?php echo $row['certification_title']."(".$row['certification_year'].")"?></h3>
                                 <p class="certificate__description"><?php echo $row['certification_details']; ?></p>
                             </div>
                             <?php } ?>
@@ -248,11 +249,11 @@
                         while($row=mysqli_fetch_assoc($query)){
                                 ?>
                             <div class="references__content bg-grid">
-                                <span class="references__subtitle"><?php echo $row['R_name'];?></span>
-                                <h3 class="references__title"><?php echo $row['jobtitle']; ?></h3>
+                                <span class="references__subtitle"><?php echo $row['refrence_name'];?></span>
+                                <h3 class="references__title"><?php echo $row['refrence_jobtitle']; ?></h3>
                                 <ul class="references__contact">
-                                    <li>Phone: <?php echo $row['phone'] ?></li>
-                                    <li>Email:<?php echo $row['Email'] ?></li>
+                                    <li>Phone: <?php echo $row['refrence_phone'] ?></li>
+                                    <li>Email:<?php echo $row['refrance_email'] ?></li>
                                 </ul>
                             </div>
                             <?php } ?>

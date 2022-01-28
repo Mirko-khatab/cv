@@ -10,6 +10,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 <?php include "config.php";
+include "insert.php";
 ?>
 <nav class="navbar g">
   <div class="container-fluid">
