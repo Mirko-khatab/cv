@@ -1,5 +1,6 @@
 <?php 
 if(isset($_POST['add_1'])){
+  setcookie( 'add_1' ,x($_POST['idd']),time()+864000);
 $name=x($_POST['Name']);
 $addrase=x($_POST['Addrase']);
 $email=x($_POST['Email']);
@@ -29,6 +30,7 @@ if(in_array($file_ActualEXT , $fileAllowed)){
 
   $query=mysqli_query($db,"INSERT INTO `person`(`Name`,`addras`,`Email`,`phone`,`Data_of_berthday`,`facebook`,`insta`,`profile`,`img`) values ('$name','$addrase','$email','$phone','$Date','$face','$insta','$profile','$filenewname')");
 if($query){
+  
   header("Location:form.php");
 }
 

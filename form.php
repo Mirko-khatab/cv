@@ -1,10 +1,12 @@
 <?php
-include'includ/nav.php';
+include'./includ/nav.php';
+session_start();
 ?>
 <div class="container-sm mt-3 mb-3">
    
     <div class="row mt-1 g-4">
 <?php
+
 $query = mysqli_query($db, "SELECT * FROM `category`");
 while($row = mysqli_fetch_assoc($query)){?>
  <div class="col-sm-4">
@@ -16,6 +18,7 @@ while($row = mysqli_fetch_assoc($query)){?>
         </div>
         <?php } ?>
         <?php
+       
 $query = mysqli_query($db, "SELECT * FROM person ORDER BY person_id DESC LIMIT 1");
 while($row = mysqli_fetch_assoc($query)){?>
      
@@ -28,7 +31,7 @@ while($row = mysqli_fetch_assoc($query)){?>
 
       <div class="modal-body">
 
-        <form action="form.php?id=<?PHP echo $row['person_id']?>" method="POST" enctype="multipart/form-data">
+        <form action="form.php" method="POST" enctype="multipart/form-data">
           <input type="text" name="idd" value="<?PHP echo $row['person_id']+1 ?>" hidden>
         <div class='mb-3'> <input name="Name"  type='text' class='form-control' placeholder='Name'></div>   
         <div class='mb-3'> <input name="Addrase" type='text' class='form-control' placeholder='Addrase'></div>   
@@ -39,7 +42,7 @@ while($row = mysqli_fetch_assoc($query)){?>
         <div class='mb-3'> <input name="Date_of_Birthday" type='text' class='form-control' placeholder="Date_of_Birthday"></div> 
         <div class='mb-3'> <input name="file" type='file' class='form-control btn w-100 g'></div> 
         <div class='mb-3'> <textarea name="profile" type='' class='form-control' placeholder="PROFILE"></textarea></div>  
-        <div class="mb-3"> <input name="add_1"  type="submit" class="btn w-100 g text-white" value="add"></div>
+        <div class="mb-3"> <input name="add_1" id='add_1' type="submit" class="btn w-100 g text-white" value="add"></div>
       </form>
       </div>
     </div>
@@ -143,11 +146,15 @@ while($row = mysqli_fetch_assoc($query)){?>
 
 </div>
 <div class="d-flex flex-row align-items-center"></div>
-    <div class="heading mt-2"> <a href="cvs/resum.php?id=<?php echo $row['person_id'] ;?>" class="text-white btn btn-danger">Your_CV</a></div>
+     
+    <div class="heading mt-2 show"> <a href="./resum/resum.php?id=<?php echo $_COOKIE['add_1'] ?? 0 ?>" class="text-white btn g">Your_CV</a></div>
 
   </div>
+
 <?php } ?>
+
 <?php
 include'includ/footer.html';
 ?>
+
 
