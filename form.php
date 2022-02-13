@@ -96,8 +96,12 @@ while($row = mysqli_fetch_assoc($query)){?>
       <form action="form.php" method="POST">
       <input type="text" name="idd" value="<?PHP echo $row['person_id']?>" hidden>
         <div class='mb-3'> <input name="Skill" type='text' class='form-control' placeholder='Skill'></div>    
-        <div class='mb-3'> <input name="lang" type='text' class='form-control' placeholder='Language'></div>    
         <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add_4' value="add"></div>  
+      </form>
+        <form action="form.php" method="POST">
+      <input type="text" name="idd" value="<?PHP echo $row['person_id']?>" hidden>
+        <div class='mb-3'> <input name="lang" type='text' class='form-control' placeholder='Language'></div>   
+        <div class="mb-3"><input type="submit" class="btn w-100 g text-white" name='add_7' value="add"></div>   
       </form>
       </div>
     </div>

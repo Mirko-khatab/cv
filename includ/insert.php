@@ -74,7 +74,7 @@ else if(isset($_POST['add_6'])){
   $person_id=x($_POST['idd']);
   $Name=x($_POST['Name']);
   $job_title=X($_POST['Job_title']);
-  $Email=x($_POST['Email']);
+  $email=x($_POST['Email']);
   $Phone=x($_POST['Phone']);
   
   $query=mysqli_query($db,"INSERT INTO `refrence`(`refrence_name`,`refrence_jobtitle`,`refrence_phone`,`refrance_email`,`person_id`) values ('$Name','$job_title','$Phone','$email','$person_id')");
@@ -82,18 +82,27 @@ else if(isset($_POST['add_6'])){
     header("Location:form.php");
   }
   }
-else if(isset($_POST['add_4'])){
+else if(isset($_POST['add_7'])){
   $person_id=x($_POST['idd']);
-  $Skill=x($_POST['Skill']);
   $lang=x($_POST['lang']);
+  
 
-  $query=mysqli_query($db,"INSERT INTO `sckill`(`Sckills`,`lang`,`person_id`) values ('$Skill','$lang','$person_id')");
+  $query=mysqli_query($db,"INSERT INTO `language`(`language_name`,`person_id`) values ('$lang','$person_id')");
   if($query){
     header("Location:form.php");
-  
-  
   }
   }
+  else if(isset($_POST['add_4'])){
+    $person_id=x($_POST['idd']);
+    $Skill=x($_POST['Skill']);
+    
+    $query=mysqli_query($db,"INSERT INTO `sckill`(`Sckills`,`person_id`) values ('$Skill','$person_id')");
+    if($query){
+      header("Location:form.php");
+    
+    
+    }
+    }
 else if(isset($_POST['add_5'])){
   $person_id=x($_POST['idd']);
   $title=x($_POST['title']);
